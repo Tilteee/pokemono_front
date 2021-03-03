@@ -18,12 +18,10 @@ function Batalha() {
         async function getUser(id) {
             const response = await mainApi.get(`/treinador/${id}`);
             const { treinador } = response.data;
+            console.log({treinador});
             setUser(treinador);
         }
     }, [])
-
-    console.log({user});
-
     return (
         <CardBatalha user={user} arroz={'feijão'}/>
     );

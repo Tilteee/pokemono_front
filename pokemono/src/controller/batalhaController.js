@@ -6,7 +6,7 @@ async function getPokemonFromUser(user, setPokemon) {
     const pokemonUser = await mainApi.get(`/pokemon/treinador/${user.id}`);
     const { pokemonTreinador } = pokemonUser.data;
     const response = await Promise.all(
-      pokemonTreinador.map(async (poke) => {
+      pokemonTreinador[0].map(async (poke) => {
         const pokeResponse = await pokeApiConfig.get(
           `/pokemon/${poke.id_pokemon}`
         );
@@ -32,7 +32,6 @@ async function getDesafiado(id_treinador) {
 
 async function getPokemonDesafiado(desafiado) {
     const pokemons = await getPokemonFromUser(desafiado, null);
-    console.log({desafiado});
     return pokemons[Math.floor(Math.random() * pokemons.length)];
 }
 
@@ -42,7 +41,6 @@ async function battle(id_treinador) {
 
     const response = await mainApi.post('/batalha', { id_desafiado: desafiado.id, id_desafiante: id_treinador })
     const {vencedor} = response.data;
-    console.log({pokemonDesafiado});
     if(vencedor === id_treinador) alert('VOCÊ VENCEU!!');
     else alert(`${desafiado.nome} venceu seu pokemon com seu ${pokemonDesafiado.pokeName.charAt(0).toUpperCase() + pokemonDesafiado.pokeName.slice(1)}`);
 }

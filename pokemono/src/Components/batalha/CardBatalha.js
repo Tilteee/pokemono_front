@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { StyleSheet, css } from "aphrodite";
-import mainApi from "../../services/mainApi";
-import pokeApiConfig from "../../services/pokeApi";
 import { battle, getPokemonFromUser } from "../../controller/batalhaController";
 
 
@@ -17,10 +15,9 @@ function CardBatalha({ user }) {
 
 
   const [pokemon, setPokemon] = useState([]);
-  console.log({ user });
   useEffect(() => {
     getPokemonFromUser(user, setPokemon);
-  }, []);
+  }, [user]);
 
   return (
     <>

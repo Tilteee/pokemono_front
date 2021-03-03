@@ -17,7 +17,7 @@ const pageStyle = StyleSheet.create({
     },
 
     form:{
-        width: '100%',
+      width: '100%',
 	    height: 'auto',
 	    maxWidth: '800px',
 	    padding: '10px 20px 3%',
@@ -66,9 +66,9 @@ export default function Login(){
                     <Form.Control 
                         type="password" 
                         placeholder="Digite Sua Senha"
-                        ria-describedby="basic-addon1"
-		        	    value={senha}
-		        	    onChange={(e) => setSenha(e.target.value)}             
+                        aria-describedby="basic-addon1"
+		        	          value={senha}
+		        	          onChange={(e) => setSenha(e.target.value)}             
                     />
                   </Form.Group>
                   <Button variant="primary" type="submit">

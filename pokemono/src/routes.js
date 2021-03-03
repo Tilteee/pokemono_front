@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from './login/login'
-import Perfil from './perfil/index'
+import Login from './Components/login/login'
+import Perfil from './Components/perfil/index'
 export default function Routes(){
     return (
         <Router>

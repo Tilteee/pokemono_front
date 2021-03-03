@@ -4,6 +4,7 @@ import pokeApiConfig from "../services/pokeApi";
 async function getPokemonFromUser(user, setPokemon) {
   if (user) {
     const pokemonUser = await mainApi.get(`/pokemon/treinador/${user.id}`);
+    console.log({pokemonUser});
     const { pokemonTreinador } = pokemonUser.data;
     const response = await Promise.all(
       pokemonTreinador[0].map(async (poke) => {

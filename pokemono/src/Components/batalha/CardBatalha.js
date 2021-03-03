@@ -7,9 +7,10 @@ import { battle, getPokemonFromUser } from "../../controller/batalhaController";
 function CardBatalha({ user }) {
     const pageStyle = StyleSheet.create({
         Page: {
-            marginTop: 10,
+            margin: 25,
             display: 'flex',
-            justifyContent: 'space-around'
+            justifyContent: 'space-around',
+            flexWrap: 'wrap'
         }
     })
 
@@ -23,9 +24,9 @@ function CardBatalha({ user }) {
     <>
         <h1>Escolha seu pokemon para batalha!</h1>
         <div className={css(pageStyle.Page)}>
-        {pokemon.map((poke, index) => (
+        {pokemon.lenght > 0 ? pokemon.map((poke, index) => (
             <Card key={index}>
-            <Card style={{ width: "18rem" }}>
+            <Card style={{ width: "18rem", margin: 10 }}>
                 <Card.Img variant="top" src={poke.img} />
                 <Card.Body>
                 <Card.Title>{poke.pokeName.charAt(0).toUpperCase() + poke.pokeName.slice(1)}</Card.Title>
@@ -34,7 +35,7 @@ function CardBatalha({ user }) {
                 </Card.Body>
             </Card>
             </Card>
-        ))}
+        )) : <h2>Você ainda não tem pokemon! </h2>}
         </div>
     </>
   );

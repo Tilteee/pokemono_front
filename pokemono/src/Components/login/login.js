@@ -51,7 +51,7 @@ function Login({ history }) {
       if(response.status === 200) {
         alert(`Seja bem vindo: ${response.data[0].nome}!`);
         localStorage.setItem('user_id', response.data[0].id)
-        history.push('/batalha');
+        history.push('/perfil');
       } else {
         alert('Erro ao Logar! Email ou senha errado');
       }

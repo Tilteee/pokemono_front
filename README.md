@@ -1,1 +1,7 @@
-# pokemono_front
+# Como Rodar:
+
+Faça o clone do repositório, ou o Fork, como preferir.
+
+Inicie através da pasta pokemono_front
+
+Dê o comando npm start na IDE
